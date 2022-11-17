@@ -114,10 +114,10 @@ set name=SW02.L3.02.TEST
 
 
 <h3>Результаты пингов, проверки локальной связности</h3>
-<img src="1.png" alt="">
 <figcaption>Вывод ip-адресов, розданных DHCP-серверами</figcaption>
-<img src="2.png" alt="">
+<img src="1.png" alt="">
 <figcaption>Проверка доступности хостов</figcaption>
-<img src="3.png" alt="">
+<img src="2.png" alt="">
 <figcaption>Вывод ip-адреса устройства</figcaption>
+<img src="3.png" alt="">
 
