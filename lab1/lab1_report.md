@@ -15,7 +15,7 @@
 </ul>
 <h3>Текст конфигураций для сетевых устройств</h3>
 
-<p>Для R01.TEST (sudo ssh admin@172.20.20.3):<br/></p>
+<h4>Для R01.TEST (sudo ssh admin@172.20.20.3)</h4>
 
 <p>/interface vlan</p>
 <p>add interface=ether2 name=vlan10 vlan-id=10</p>
@@ -40,7 +40,7 @@
 <p>/system identity</p>
 <p>set name=R01.TEST</p>
 
-<p>Для SW01.L3.01.TEST (sudo ssh admin@172.20.20.4):<br/></p>
+<h4>Для SW01.L3.01.TEST (sudo ssh admin@172.20.20.4)</h4>
 
 <p>/interface bridge</p>
 <p>add name=bridge10</p>
@@ -66,7 +66,7 @@
 <p>/system identity</p>
 <p>set name=SW01.L3.01.TEST</p>
 
-<p>Для SW02.L3.01.TEST (sudo ssh admin@172.20.20.7):<br/></p>
+<h4>Для SW02.L3.01.TEST (sudo ssh admin@172.20.20.7)</h4>
 <p>/interface bridge</p> 
 <p>add name=bridge10</p> 
 <p>/interface vlan</p> 
@@ -84,7 +84,7 @@
 <p>/system identity</p> 
 <p>set name=SW02.L3.01.TEST</p>
 
-<p>Для SW02.L3.02.TEST (sudo ssh admin@172.20.20.5):<br/></p>
+<h4>Для SW02.L3.02.TEST (sudo ssh admin@172.20.20.5)</h4>
 <p>/interface bridge</p> 
 <p>add name=bridge20</p> 
 <p>/interface vlan</p> 
@@ -97,14 +97,17 @@
 <p>/ip address</p> 
 <p>add address=172.31.255.30/30 interface=ether1 </p><p>network=172.31.255.28</p> 
 <p>/ip dhcp-client</p> 
-<p>add disabled=no interface=ether1</p> 
-<p>add disabled=no interface=bridge20</p> 
-<p>/system identity</p> 
-<p>set name=SW02.L3.02.TEST</p>
+<p>add disabled=no interface=ether1
+<pre><code>add disabled=no interface=bridge20 
+/system identity
+set name=SW02.L3.02.TEST</code></pre>
 
 
 <h3>Результаты пингов, проверки локальной связности</h3>
 <img src="1.png" alt="">
+<figcaption>Вывод ip-адресов, розданных DHCP-серверами</figcaption>
 <img src="2.png" alt="">
+<figcaption>Проверка доступности хостов</figcaption>
 <img src="3.png" alt="">
+<figcaption>Вывод ip-адреса устройства</figcaption>
 
