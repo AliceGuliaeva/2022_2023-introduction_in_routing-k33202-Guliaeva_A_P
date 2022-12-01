@@ -2,8 +2,8 @@
 <p>Faculty: [FICT](https://fict.itmo.ru)</p>
 <p>Course: [Introduction in routing](https://github.com/itmo-ict-faculty/introduction-in-routing)</p>
 <p>Year: 2022/2023 </p>
-<p>Group: K33202, K33212</p>
-<p>Author: Guliaeva Alisa, Potitova Valentina </p>
+<p>Group: K33202</p>
+<p>Author: Guliaeva Alisa</p>
 <p>Lab: Lab1 </p>
 <p>Date of create: 20.09.2022 </p>
 <p>Date of finished: 18.11.2022</p>
@@ -11,8 +11,10 @@
 <h2>"Установка ContainerLab и развертывание тестовой сети связи"</h2>
 <ul>
 <li>Файл, который использовали для развертывания тестовой сети, находится в папке с лабораторной. Называется "lab1.yaml".</li>
-<li>Схема связи находится в папке с лабораторной. Называется "Схема.jpeg".</li>
+<li>Схема связи находится в папке с лабораторной. Называется "Схема.jpg".</li>
 </ul>
+<h3>Схема сети</h3>
+<img src='Схема.jpg' alt="">
 <h3>Текст конфигураций для сетевых устройств</h3>
 
 <h4>Для R01.TEST (sudo ssh admin@172.20.20.3)</h4>
@@ -120,4 +122,9 @@ set name=SW02.L3.02.TEST
 <img src="2.png" alt="">
 <figcaption>Вывод ip-адреса устройства</figcaption>
 <img src="3.png" alt="">
+
+<h3>Вывод</h3>
+<div>
+В ходе работы был изучен инструмент ContainerLab, развернута тестовая сеть связи и настроено оборудование на базе Linux и RouterOS.
+</div>
 
