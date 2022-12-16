@@ -20,7 +20,7 @@
 add name=EoMPLS_B
 add name=Lo0
 /interface vpls
-add cisco-style=yes cisco-style-id=666 disabled=no l2mtu=1500 mac-address=02:3F:B8:F3:CB:64 name=EoMPLS remote-peer=6.6.6.6
+add cisco-style=yes cisco-style-id=666 disabled=no l2mtu=1500 mac-address=02:E0:6E:AC:1D:66 name=EoMPLS remote-peer=6.6.6.6
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
 /routing ospf instance
@@ -32,7 +32,7 @@ add bridge=EoMPLS_B interface=ether2
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=172.16.1.1/30 interface=ether3 network=172.16.1.0
 add address=172.16.2.1/30 interface=ether4 network=172.16.2.0
-add address=1.1.1.1/32 interface=Lo0 network=1.1.1.1
+add address=1.1.1.1 interface=Lo0 network=1.1.1.1
 /ip dhcp-client
 add disabled=no interface=ether1
 /mpls ldp
@@ -59,7 +59,7 @@ set [ find default=yes ] router-id=2.2.2.2
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=172.16.1.2/30 interface=ether2 network=172.16.1.0
 add address=172.16.3.1/30 interface=ether3 network=172.16.3.0
-add address=2.2.2.2/32 interface=Lo0 network=2.2.2.2
+add address=2.2.2.2 interface=Lo0 network=2.2.2.2
 /ip dhcp-client
 add disabled=no interface=ether1
 /mpls ldp
@@ -85,9 +85,9 @@ set [ find default=yes ] router-id=3.3.3.3
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=172.16.2.2/30 interface=ether2 network=172.16.2.0
-add address=3.3.3.3/32 interface=Lo0 network=3.3.3.3
 add address=172.16.4.1/30 interface=ether3 network=172.16.4.0
 add address=172.16.5.1/30 interface=ether4 network=172.16.5.0
+add address=3.3.3.3 interface=Lo0 network=3.3.3.3
 /ip dhcp-client
 add disabled=no interface=ether1
 /mpls ldp
@@ -100,6 +100,7 @@ add interface=ether4
 add area=backbone
 /system identity
 set name=R01.LBN
+
 </code></pre>
 
 <h4>Для R01.HKI (sudo ssh admin@172.20.20.5)</h4>
@@ -114,9 +115,9 @@ set [ find default=yes ] router-id=4.4.4.4
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=172.16.3.2/30 interface=ether2 network=172.16.3.0
-add address=4.4.4.4/32 interface=Lo0 network=4.4.4.4
 add address=172.16.6.1/30 interface=ether3 network=172.16.6.0
 add address=172.16.5.2/30 interface=ether4 network=172.16.5.0
+add address=4.4.4.4 interface=Lo0 network=4.4.4.4
 /ip dhcp-client
 add disabled=no interface=ether1
 /mpls ldp
@@ -129,6 +130,7 @@ add interface=ether4
 add area=backbone
 /system identity
 set name=R01.HKI
+
 </code></pre>
 
 <h4>Для R01.MSK (sudo ssh admin@172.20.20.6)</h4>
@@ -143,8 +145,8 @@ set [ find default=yes ] router-id=5.5.5.5
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=172.16.4.2/30 interface=ether2 network=172.16.4.0
-add address=5.5.5.5/32 interface=Lo0 network=5.5.5.5
 add address=172.16.7.1/30 interface=ether3 network=172.16.7.0
+add address=5.5.5.5 interface=Lo0 network=5.5.5.5
 /ip dhcp-client
 add disabled=no interface=ether1
 /mpls ldp
@@ -165,7 +167,7 @@ set name=R01.MSK
 add name=EoMPLS_B
 add name=Lo0
 /interface vpls
-add cisco-style=yes cisco-style-id=666 disabled=no l2mtu=1500 mac-address=02:3C:7A:86:AF:B3 name=EoMPLS remote-peer=1.1.1.1
+add cisco-style=yes cisco-style-id=666 disabled=no l2mtu=1500 mac-address=02:92:C4:B7:BC:22 name=EoMPLS remote-peer=1.1.1.1
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
 /routing ospf instance
@@ -176,8 +178,8 @@ add bridge=EoMPLS_B interface=ether4
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=172.16.7.2/30 interface=ether2 network=172.16.7.0
-add address=6.6.6.6/32 interface=Lo0 network=6.6.6.6
 add address=172.16.6.2/30 interface=ether3 network=172.16.6.0
+add address=6.6.6.6 interface=Lo0 network=6.6.6.6
 /ip dhcp-client
 add disabled=no interface=ether1
 /mpls ldp
@@ -220,13 +222,18 @@ add disabled=no interface=ether1
 set name=SGI-Prism
 </code></pre>
 
+<figcaption>Выкладки с маршрутами</figcaption>
+<img src="NY.png" alt="">
+<img src="LND.png" alt="">
+<img src="LBN.png" alt="">
+<img src="HKI.png" alt="">
+<img src="MSK.png" alt="">
+<img src="SPB.png" alt="">
 
-
-<h3>Результаты пингов</h3>
+<h3>Результат пингов</h3>
 <figcaption>Результаты пингов, проверки локальной связности</figcaption>
-<img src="2.png" alt="">
-<figcaption>Результаты пингов, проверки локальной связности на PC2</figcaption>
-<img src="1.png" alt="">
+<img src="ping.png" alt="">
+
 
 
 <h3>Вывод</h3>
