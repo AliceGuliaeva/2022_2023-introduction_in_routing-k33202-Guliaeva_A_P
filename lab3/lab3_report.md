@@ -4,7 +4,7 @@
 <p>Year: 2022/2023 </p>
 <p>Group: K33202</p>
 <p>Author: Guliaeva Alisa </p>
-<p>Lab: Lab2 </p>
+<p>Lab: Lab3 </p>
 <p>Date of create: 02.12.2022 </p>
 <p>Date of finished: 16.12.2022</p>
 <h1>Отчет по лабораторной №3</h1>
@@ -222,7 +222,7 @@ add disabled=no interface=ether1
 set name=SGI-Prism
 </code></pre>
 
-<figcaption>Выкладки с маршрутами</figcaption>
+<h3>Выкладки с маршрутами</h3>
 <img src="NY.png" alt="">
 <img src="LND.png" alt="">
 <img src="LBN.png" alt="">
@@ -231,7 +231,6 @@ set name=SGI-Prism
 <img src="SPB.png" alt="">
 
 <h3>Результат пингов</h3>
-<figcaption>Результаты пингов, проверки локальной связности</figcaption>
 <img src="ping.png" alt="">
 
 
